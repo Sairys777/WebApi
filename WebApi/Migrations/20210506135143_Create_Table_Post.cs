@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebApi.Migrations
 {
-    public partial class create_entities_table : Migration
+    public partial class Create_Table_Post : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,7 +12,8 @@ namespace WebApi.Migrations
                 columns: table => new
                 {
                     id = table.Column<Guid>(type: "uuid", nullable: false),
-                    descrpition = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false)
+                    title = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
+                    content = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
