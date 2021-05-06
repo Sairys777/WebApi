@@ -9,7 +9,7 @@ namespace WebApi.DataAccessLayer
 		{
 		}
 
-		public DbSet<TestEntity> TestEntities { get; set; }
+		public DbSet<Post> Posts { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{

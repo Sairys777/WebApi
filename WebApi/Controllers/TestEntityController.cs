@@ -20,23 +20,23 @@ namespace WebApi.Controllers
 		}
 
 		[HttpPost("create-random-new")]
-		public TestEntity CreateRandomNew()
+		public Post CreateRandomNew()
 		{
-			var @new = new TestEntity
+			var @new = new Post
 			{
-				Descrpition = $"Test Description {DateTime.Now}",
+				Title = $"Test Description {DateTime.Now}",
 			};
 
-			_dbContext.TestEntities.Add(@new);
+			_dbContext.Posts.Add(@new);
 			_dbContext.SaveChanges();
 
 			return @new;
 		}
 
 		[HttpPost("get-all")]
-		public TestEntity[] GetAll()
+		public Post[] GetAll()
 		{
-			return _dbContext.TestEntities.ToArray();
+			return _dbContext.Posts.ToArray();
 		}
 	}
 }

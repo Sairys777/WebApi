@@ -10,8 +10,8 @@ using WebApi.DataAccessLayer;
 namespace WebApi.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210505164107_create_entities_table")]
-    partial class create_entities_table
+    [Migration("20210506135143_Create_Table_Post")]
+    partial class Create_Table_Post
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,11 +28,17 @@ namespace WebApi.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("id");
 
-                    b.Property<string>("Descrpition")
+                    b.Property<string>("Content")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("character varying(100)")
-                        .HasColumnName("descrpition");
+                        .HasColumnName("content");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)")
+                        .HasColumnName("title");
 
                     b.HasKey("Id")
                         .HasName("pk_test_entities");
